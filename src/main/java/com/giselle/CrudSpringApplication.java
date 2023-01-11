@@ -1,12 +1,12 @@
-package com.giselle.crudspring;
+package com.giselle;
+
+import com.giselle.model.Course;
+import com.giselle.repository.CourseRepository;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import com.giselle.crudspring.model.Course;
-import com.giselle.crudspring.repository.CourseRepository;
 
 @SpringBootApplication
 public class CrudSpringApplication {
@@ -16,16 +16,15 @@ public class CrudSpringApplication {
 	}
 
 	@Bean
-	CommandLineRunner initDataBase(CourseRepository courseRepository) {
+	CommandLineRunner initDatabase(CourseRepository courseRepository) {
 		return args -> {
-				courseRepository.deleteAll();
+			courseRepository.deleteAll();
 
-				Course c = new Course();
-				c.setName("Angular com Spring");
-				c.setCategory("front-end");
-				courseRepository.save(c);
+			Course c = new Course();
+			c.setName("Angular com Spring");
+			c.setCategory("Front-end");
 
+			courseRepository.save(c);
 		};
 	}
-
 }
