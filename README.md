@@ -1,4 +1,4 @@
-### crud-spring
+### CRUD Java/ Spring
 
 Back-end feito com Spring durante curso de Angular de Loiane Groner  
 
